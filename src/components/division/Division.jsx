@@ -1,7 +1,10 @@
 
 const Division = () => {
   return (
-    <div>Division</div>
+    <div className="division">
+      <span className="division__line"></span>
+      <div className="division__icon"></div>
+    </div>
   )
 }
 

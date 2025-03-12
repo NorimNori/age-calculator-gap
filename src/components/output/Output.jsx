@@ -1,7 +1,10 @@
 
-const Output = () => {
+const Output = ({value, label}) => {
   return (
-    <div>Output</div>
+    <div className="output__date">
+      <span className="output__date-value">{value}</span>
+      <span className="output__date-label">{label}</span>
+    </div>
   )
 }
 
