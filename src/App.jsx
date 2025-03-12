@@ -3,7 +3,7 @@ import './App.scss'
 function App() {
 
   return (
-    <>
+    <main>
       Day
       DD
 
@@ -16,7 +16,7 @@ function App() {
       -- years
       -- months
       -- days
-    </>
+    </main>
   )
 }
 
