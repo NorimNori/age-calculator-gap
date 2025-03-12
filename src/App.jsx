@@ -7,11 +7,17 @@ function App() {
 
   return (
     <main >
-      <section className="input">
+      <section 
+      aria-labelledby="input-section"
+      className="input">
+        <h2 id="input-section" className="sr-only">Input Section</h2>
         <Input />
       </section>
       <Division />
-      <section className="output">
+      <section 
+      aria-labelledby="output-section"
+      className="output">
+        <h2 id="output-section" className="sr-only">Output Section</h2>
         <Output />
       </section>
     </main>

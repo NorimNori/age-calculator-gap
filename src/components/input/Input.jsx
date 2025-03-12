@@ -7,7 +7,8 @@ const Input = ({ name, placeholder }) => {
       <input 
         id={inputId}
         className="input__date-field"
-        placeholder={placeholder} 
+        placeholder={placeholder}
+        aria-label={name}
       />
     </div>
   )
