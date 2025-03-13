@@ -1,11 +1,10 @@
 const Input = ({ name, placeholder }) => {
-  const inputId = name.toLowerCase().replace(/\s+/g, "-");
 
   return (
     <div className="input__date">
-      <label className="input__date-label" htmlFor={inputId}>{name}</label>
+      <label className="input__date-label" htmlFor={name}>{name}</label>
       <input 
-        id={inputId}
+        id={name}
         className="input__date-field"
         placeholder={placeholder}
         aria-label={name}
