@@ -1,3 +1,4 @@
+import './Output.scss'
 
 const Output = ({value, label}) => {
   return (
@@ -7,7 +8,7 @@ const Output = ({value, label}) => {
     className="output__date"
     >
       <span className="output__date-value">{value}</span>
-      <span className="output__date-label">{label}</span>
+      <span className="output__date-label"> {label}</span>
     </div>
   )
 }

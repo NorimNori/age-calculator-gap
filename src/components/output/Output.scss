@@ -1,0 +1,13 @@
+@use '@/styles/colors.scss';
+
+.output__date {
+    width: 100%;
+    font-size: 3.5rem;
+    font-weight: 800;
+    font-style: italic;
+    line-height: 1.3;
+
+    &-value {
+        color: colors.$purple;
+    }
+}

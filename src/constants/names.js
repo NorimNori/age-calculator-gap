@@ -1,8 +1,8 @@
-export const inputNames = [
-    { name: "DAY", placeholder: "DD" },
-    { name: "MONTH", placeholder: "MM" },
-    { name: "YEAR", placeholder: "YYYY" }
-]
+export const inputNames = [{ 
+    day: "DAY",
+     month: "MONTH", 
+     year: "YEAR" 
+}]
 
 export const outputNames = [{
     year: ["year", "years"],
