@@ -3,14 +3,13 @@
 .division {
     width: 100%;
     height: auto;
-    margin: 2.8em 0;
     position: relative;
 
     &__line {
         width: 100%;
         height: 1px;
         display: block;
-        margin: 2.8em 0;
+        margin: 3em 0;
         background-color: rgba(colors.$smokeyGrey, .4);
     }
 
@@ -22,7 +21,8 @@
 
         position: absolute;
         top: -1.5em;
-        right: 43%;
+        left: 50%;
+        transform: translateX(-50%);
 
         background: {
             image: url(../../../public/icon-arrow.svg);
@@ -31,5 +31,17 @@
             position: center;
             size: 40%;
         }
+    }
+}
+
+@media (min-width: 768px) {
+    .division__line {
+        margin: 2em 0;
+    }
+    .division__icon {
+        width: 4em;
+        height: 4em;
+        top: -2em;
+        transform: translateX(300%);
     }
 }

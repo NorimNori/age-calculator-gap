@@ -2,6 +2,7 @@
 
 main {
     width: 100%;
+    max-width: 38rem;
     padding: 3em 1.5em;
     border-radius: 20px 20px 100px 20px;
     background-color: colors.$offWhite;
@@ -21,9 +22,16 @@ main {
 
 .input {
     display: flex;
-    gap: 1rem;
+    gap: clamp(0.8rem, 0.554rem + 1.052vw, 1.5rem);
 }
 
 .output {
     width: 100%;
 }
+
+@media (min-width: 768px) {
+    main {
+        padding: 2.5em 3em;
+    }
+}
+  
