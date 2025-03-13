@@ -2,6 +2,7 @@ import './App.scss'
 import Input from '@/components/input/index'
 import Division from '@/components/division/Division'
 import Output from './components/output'
+import { inputNames } from './constants/names'
 
 function App() {
 
@@ -11,7 +12,13 @@ function App() {
       aria-labelledby="input-section"
       className="input">
         <h2 id="input-section" className="sr-only">Input Section</h2>
-        <Input />
+        {inputNames.map((input, index) => (
+          <Input
+          key = {index}
+          name = {input.name}
+          placeholder = {input.placeholder}
+          />
+        ))}
       </section>
       <Division />
       <section 

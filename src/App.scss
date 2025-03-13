@@ -18,3 +18,8 @@ main {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
 }
+
+.input {
+    display: flex;
+    gap: 1rem;
+}
