@@ -1,3 +1,4 @@
+import './Division.scss'
 
 const Division = () => {
   return (

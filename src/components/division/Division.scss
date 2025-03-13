@@ -1,0 +1,35 @@
+@use '@/styles/colors.scss';
+
+.division {
+    width: 100%;
+    height: auto;
+    margin: 2.8em 0;
+    position: relative;
+
+    &__line {
+        width: 100%;
+        height: 1px;
+        display: block;
+        margin: 2.8em 0;
+        background-color: rgba(colors.$smokeyGrey, .4);
+    }
+
+    &__icon {
+        width: 3em;
+        height: 3em;
+        padding: 1em;
+        border-radius: 50%;
+
+        position: absolute;
+        top: -1.5em;
+        right: 43%;
+
+        background: {
+            image: url(../../../public/icon-arrow.svg);
+            color: colors.$purple;
+            repeat: no-repeat;
+            position: center;
+            size: 40%;
+        }
+    }
+}
