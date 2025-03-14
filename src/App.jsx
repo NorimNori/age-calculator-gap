@@ -10,7 +10,35 @@ function App() {
   const [age, setAge] = useState({ years: "--", months: "--", days: "--"});
 
   const sendData = async (data) => {
-    console.log(data);
+    const { day, month, year } = data;
+
+    if (!day || !month || !year) {
+      alert("Please, fill all fields!");
+      return;
+    }
+  
+    const birthDate = new Date(year, month - 1, day);
+    if (birthDate.toISOString().slice(0, 10) !== `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`) {
+      alert("Please, enter a valid date!");
+      return;
+    }
+  
+    const today = new Date();
+    let years = today.getFullYear() - birthDate.getFullYear();
+    let months = today.getMonth() - birthDate.getMonth();
+    let days = today.getDate() - birthDate.getDate();
+  
+    if (days < 0) {
+      months -= 1;
+      days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+    }
+  
+    if (months < 0) {
+      years -= 1;
+      months += 12;
+    }
+  
+    setAge({ years, months, days });
   }
 
   const { input, handleInputChange, handleSubmit } = useForm(sendData, {
@@ -18,8 +46,6 @@ function App() {
     month: '',
     year: ''
   })
-
-
 
   return (
     <main >
