@@ -54,26 +54,28 @@ function App() {
       aria-labelledby="input-section"
       className="input">
         <h2 id="input-section" className="sr-only">Input Section</h2>
-        <Input
-        name = "day"
-        placeholder = "DD" 
-        value = {input.day}
-        onChange = {handleInputChange}
-        />
+        <div className='input__container'>
+          <Input
+          name = "day"
+          placeholder = "DD" 
+          value = {input.day}
+          onChange = {handleInputChange}
+          />
 
-        <Input 
-        name="month" 
-        placeholder="MM"
-        value = {input.month}
-        onChange = {handleInputChange}
-        />
+          <Input 
+          name="month" 
+          placeholder="MM"
+          value = {input.month}
+          onChange = {handleInputChange}
+          />
 
-        <Input 
-        name="year" 
-        placeholder="YYYY"
-        value={input.year}
-        onChange={handleInputChange}
-        />
+          <Input 
+          name="year" 
+          placeholder="YYYY"
+          value={input.year}
+          onChange={handleInputChange}
+          />
+        </div>
       <Division />
       </form>
       <section 
