@@ -36,6 +36,21 @@
     }
 }
 
+.label__error {
+    color: colors.$lightRed;
+}
+
+.field__error {
+    border: 1px solid colors.$lightRed;
+}
+
+.date__error {
+    color: colors.$lightRed;
+    font-size: .5rem;
+    font-style: italic;
+    margin-top: .7em;
+}
+
 @media (max-width: 374px) {
     .input__date-field {
         width: 4.1em;

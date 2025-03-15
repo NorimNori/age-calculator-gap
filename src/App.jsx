@@ -81,6 +81,9 @@ function App() {
           placeholder = "DD" 
           value = {input.day}
           onChange = {handleInputChange}
+          error = {errors.day}
+          label__error = {`${errors.day ? "label__error" : ""}`}
+          field__error = {`${errors.day ? "field__error" : ""}`}
           />
 
           <Input 
@@ -88,6 +91,9 @@ function App() {
           placeholder="MM"
           value = {input.month}
           onChange = {handleInputChange}
+          error = {errors.month}
+          label__error = {`${errors.month ? "label__error" : ""}`}
+          field__error = {`${errors.month ? "field__error" : ""}`}
           />
 
           <Input 
@@ -95,6 +101,9 @@ function App() {
           placeholder="YYYY"
           value={input.year}
           onChange={handleInputChange}
+          error = {errors.year}
+          label__error = {`${errors.year ? "label__error" : ""}`}
+          field__error = {`${errors.year ? "field__error" : ""}`}
           />
         </div>
       <Division />
