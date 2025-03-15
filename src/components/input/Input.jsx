@@ -19,7 +19,7 @@ const Input = ( props ) => {
         id={name}
         name={name}
         value={value}
-        type = "number"
+        type = "text"
         onChange={onChange}
         className={`input__date-field ${field__error}`}
         placeholder={placeholder}

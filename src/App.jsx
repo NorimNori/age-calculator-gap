@@ -12,53 +12,55 @@ function App() {
 
   const sendData = async (data) => {
     let newErrors = { day: "", month: "", year: "" };
-    const { day, month, year } = data;
     const today = new Date();
   
-    if (!day) newErrors.day = "This field is required";
-    if (!month) newErrors.month = "This field is required";
-    if (!year) newErrors.year = "This field is required";
-  
-    if (day && (day < 1 || day > 31)) newErrors.day = "Must be a valid day";
-    if (month && (month < 1 || month > 12)) newErrors.month = "Must be a valid month";
-  
+    const day = data.day.trim() !== "" ? Number(data.day) : null;
+    const month = data.month.trim() !== "" ? Number(data.month) : null;
+    const year = data.year.trim() !== "" ? Number(data.year) : null;
+
+    if (day === null) newErrors.day = "This field is required";
+    if (month === null) newErrors.month = "This field is required";
+    if (year === null) newErrors.year = "This field is required";
+
+    if (day !== null && (isNaN(day) || day < 1 || day > 31)) newErrors.day = "Must be a valid day";
+    if (month !== null && (isNaN(month) || month < 1 || month > 12)) newErrors.month = "Must be a valid month";
+    if (year !== null && (isNaN(year) || year > today.getFullYear())) newErrors.year = "Must be in the past";
+
     const birthDate = new Date(year, month - 1, day);
     if (
-      birthDate.getFullYear() != year ||
-      birthDate.getMonth() + 1 != month ||
-      birthDate.getDate() != day
+      year !== null &&
+      month !== null &&
+      day !== null &&
+      (birthDate.getFullYear() !== year ||
+        birthDate.getMonth() + 1 !== month ||
+        birthDate.getDate() !== day)
     ) {
       newErrors.day = "Must be a valid date";
     }
 
-    if (year > today.getFullYear()) {
-      newErrors.year = "Must be in the past";
-    }
-
     if (newErrors.day || newErrors.month || newErrors.year) {
       setErrors(newErrors);
+      setAge({ years: "--", months: "--", days: "--" }); 
       return;
-    } else {
-
-      setErrors({ day: "", month: "", year: "" });
-  
-      const today = new Date();
-      let years = today.getFullYear() - birthDate.getFullYear();
-      let months = today.getMonth() - birthDate.getMonth();
-      let days = today.getDate() - birthDate.getDate();
-  
-      if (days < 0) {
-        months -= 1;
-        days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
-      }
-  
-      if (months < 0) {
-        years -= 1;
-        months += 12;
-      }
-  
-      setAge({ years, months, days });
     }
+
+    setErrors({ day: "", month: "", year: "" });
+  
+    let years = today.getFullYear() - birthDate.getFullYear();
+    let months = today.getMonth() - birthDate.getMonth();
+    let days = today.getDate() - birthDate.getDate();
+  
+    if (days < 0) {
+      months -= 1;
+      days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+    }
+  
+    if (months < 0) {
+      years -= 1;
+      months += 12;
+    }
+  
+    setAge({ years, months, days });
   };
   console.log(errors)
   
